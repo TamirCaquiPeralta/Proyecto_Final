@@ -60,6 +60,7 @@ def register (request):
 
     return render(request, "Accounts/registrate.html", context=context)
 
+
 class CustomLogoutView(LogoutView):
     next_page = reverse_lazy("iniciar_sesion") 
 

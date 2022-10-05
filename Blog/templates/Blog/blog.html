@@ -1,4 +1,52 @@
 {% extends 'Blog/plantilla_base.html' %}
 {% block plantilla_base %}
 
+{% block style_block %}
+<style>
+  table.coder-table {
+    border:3px solid;
+  }
+  th,
+  td {
+    border:1px solid;
+    padding:5px 10px;
+  }
+  .eliminado {
+    background-color: red;
+  }
+</style>
+{% endblock style_block %}
+<table border="2"> 
+                        {% if object_list %}
+                        <table class="coder-table">
+                            <tbody>
+                              <tr>
+                                <th>
+                                  <strong>Titulo</strong>
+                                </th>
+                                <th>
+                                  <strong>Fecha</strong>
+                                </th>
+                                <th>Editar</th>
+                                <th>Eliminar</th>
+                                <th>Mas info</th>
+                              </tr>
+                              {% for blog in object_list %}
+                              <tr>
+                                <td>{{blog.titulo}}</td>
+                                <td>{{blog.fecha}}</td>
+                                <td><a href="{% url 'editar' blog.id %}">Editar</a></td>
+                                <td><a href="{% url 'eliminar' blog.id %}">Eliminar</a></td>
+                                <td><a href="{% url 'mas_info' blog.id %}">Mas info</a></td>
+                              </tr>
+
+                              {% endfor %}
+                            </tbody> 
+                        {% else %}
+                        <h1>No hay ningun blog aún</h1>
+
+                        <h4>¿Quieres realizar un blog?</h4>
+                        {% endif %}
+
+                        <a href="{% url 'crear' %}">Crear</a></table>
 {%endblock%}

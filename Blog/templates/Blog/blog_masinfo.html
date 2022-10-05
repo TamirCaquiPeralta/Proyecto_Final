@@ -1,0 +1,21 @@
+{% extends "Blog/plantilla_base.html"  %}
+
+{% block plantilla_base %}
+
+<form method = "post">
+
+    <h1>{{object.titulo}}</h1>
+    <h3>{{object.subtitulo}}</h3>
+    <p>{{object.cuerpo |safe}}</p><br>
+
+    {% if blog.imagen %}
+
+    <img src = "{{object.imagen.url}}"/>
+
+    {% endif %}
+       
+    <p>Fecha: {{object.fecha}}</p>
+    <p>Autor: {{object.autor}}</p>
+
+
+{% endblock %}

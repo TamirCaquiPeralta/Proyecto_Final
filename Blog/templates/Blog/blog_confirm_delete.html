@@ -1,0 +1,14 @@
+{% extends "Blog/plantilla_base.html"  %}
+
+{% block plantilla_base %}
+
+<form method = "post">
+
+    {% csrf_token %}
+
+    ¿Estas seguro de eliminar este Blog "{{ object }}"?
+
+    <input type = "submit" value = "Eliminar" />
+  </form>
+
+{% endblock %}

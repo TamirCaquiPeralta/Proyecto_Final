@@ -33,9 +33,13 @@
                 </div>
             </div>
         </nav>
-                
+        
+        {% block style_block %}
+        {% endblock style_block %}
+        
             </div>
         </div>
+        <section style="margin: 80px ">
         {% if mensaje %}
         <p>{{mensaje}}</p>
         {%endif%}

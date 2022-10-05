@@ -5,9 +5,9 @@ from django.urls import path
 from Accounts import views
 urlpatterns = [
  
- path('iniciar_sesion/', views.login_request, name= "iniciar_sesion"),
+path('iniciar_sesion/', views.login_request, name= "iniciar_sesion"),
  
- path('register/', views.register, name="registrate" ),
+path('register/', views.register, name="registrate" ),
 
 path('logout/', views.CustomLogoutView.as_view(), name="cerrar_sesion" ),
 
